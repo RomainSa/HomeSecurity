@@ -21,5 +21,5 @@ git clone https://github.com/RomainSa/HomeSecurity.git
 - paramétrer un job CRON:
 ```bash
 crontab -e
-1 15 * * * /home/pi/camera/HomeSecurity/snapshot.sh
+1 0 * * * /home/pi/camera/HomeSecurity/snapshot.sh
 ```
