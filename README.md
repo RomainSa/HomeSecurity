@@ -23,3 +23,11 @@ git clone https://github.com/RomainSa/HomeSecurity.git
 crontab -e
 1 0 * * * /home/pi/camera/HomeSecurity/snapshot.sh
 ```
+- donner login et mot de passe et lancer le serveur web Flask
+```bash
+export FLASK_APP=home.py
+export FLASK_LOGIN=???
+export FLASK_PASSWORD=???
+export FLASK_APP_URL=???
+python -m flask run --host=0.0.0.0
+```
