@@ -41,13 +41,12 @@ def requires_auth(f):
 @requires_auth
 def index():
     """Home page"""
-    # last screenshot
     snapshots_folder = config['server']['snapshots_folder']
     files = [f for f in glob.glob(snapshots_folder + '*') if '.jpg' in f]
     if len(files) > 0:
+        # last screenshot
         latest_snapshot_path = max(files, key=os.path.getctime)
-        print(latest_snapshot_path)
-        # copy in static
+        # copy in static folder
         copyfile(latest_snapshot_path, 'static/home.jpg')
     return render_template('index.html',
                            url=url,
